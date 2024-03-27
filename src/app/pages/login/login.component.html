@@ -1,1 +1,29 @@
-<app-default-login-layout></app-default-login-layout>
+<app-default-login-layout 
+    title="Faça login em sua conta"
+    primaryBtnText="Conecte-se agora"
+    secondaryBtnText="Inscreva-se agora"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+>
+    <form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="curso@estacio.br"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Sua Senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <span>Esqueceu sua senha?</span>
+    </form>
+</app-default-login-layout>
